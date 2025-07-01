@@ -31,6 +31,16 @@ E também [links clicáveis](https://streamlit.io)
 # Cabeçalhos e seções
 st.header("📌 Sessão 1: Entrada de texto")
 
+# Selectbox para tipo de texto
+tipo_texto = st.selectbox("Selecione o tipo de texto:", ["Descrição", "Comentário", "Observação"])
+
+# Input de texto
+texto_entrada = st.text_area(f"Digite o texto do tipo '{tipo_texto}':")
+
+if texto_entrada:
+    st.info(f"Você digitou um texto do tipo **{tipo_texto}**:")
+    st.write(texto_entrada)
+
 nome = st.text_input("Digite seu nome:")
 if nome:
     st.success(f"✅ Olá, {nome}! Tudo funcionando perfeitamente.")
