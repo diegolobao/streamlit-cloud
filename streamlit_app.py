@@ -91,3 +91,18 @@ st.info("ℹ️ Este é um texto apenas informativo.")
 # Fim
 st.markdown("---")
 st.caption("© 2025 - Exemplo criado por Diego com Streamlit 🚀")
+
+
+# Dados de exemplo: nota -> tarefa
+notas = {
+    "Nota 1": "Tarefa 1A",
+    "Nota 2": "Tarefa 2B",
+    "Nota 3": "Tarefa 3C",
+}
+
+# Selectbox para nota (interativo)
+nota_selecionada = st.selectbox("Selecione a nota:", list(notas.keys()))
+
+# Mostrar tarefa automaticamente, sem permitir editar
+tarefa_relacionada = notas[nota_selecionada]
+st.text_input("Tarefa relacionada:", value=tarefa_relacionada, disabled=True)
